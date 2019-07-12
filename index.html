@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <title>Game of Thrones</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-4">
+
+            <!-- <img src="./assets/images/original.jpg" alt="GoT"> -->
+
+        </div>
+
+        <div class="col-4 col d-flex align-items-center justify-content-center">
+
+            <img src="./assets/images/original.jpg" alt="GoT" style="width:100%">
+
+        </div>
+        <div class="col-4">
+
+            <!-- <img src="./assets/images/original.jpg" alt="GoT"> -->
+
+        </div>
+
+    </div>
+
+    <!-- <div class="container"> -->
+
+
+    <div class="row">
+        <div class="col-6" id="picRow">
+            <h4>Select Your Character</h4>
+        </div>
+    </div>
+
+    <!-- second row that contains all four pictures at the start of the game. -->
+    <div class="row border m-auto" id="picRow" style="  padding-top: 10px;
+        padding-bottom: 10px; border-width:3px !important;">
+
+
+
+        <div class="col-2 -0" id="john">
+            <div class="card characterCardSelect _0 mx-auto johnSnow" value="johnSnow">
+                <img src="./assets/images/john-snow.jpeg" class="card-img-top mx-auto" alt="John Snow"
+                    style="border-radius: 50%;height: 130px;width: 130px">
+                <div class="card-body mx-auto">
+                    <h6 class="card-title">Jon Snow</h6>
+                    <p class="card-text">Health Points <span class="johnHP"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 -1" id="danny">
+            <div class="card characterCardSelect _1 mx-auto dannyT" value="dannyT">
+                <img src="./assets/images/danny.jpeg" class="card-img-top mx-auto" alt="John Snow"
+                    style="border-radius: 50%;height: 130px;width: 130px">
+                <div class="card-body mx-auto">
+                    <h6 class="card-title">Daenerys Targaryen</h6>
+                    <p class="card-text">Health Points <span class="dannyHP"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 -2" id="cersie">
+            <div class="card characterCardSelect _2 mx-auto cersieL" value="cersieL">
+                <img src="./assets/images/cersie.jpeg" class="card-img-top mx-auto" alt="John Snow"
+                    style="border-radius: 50%;height: 130px;width: 130px">
+                <div class="card-body mx-auto">
+                    <h6 class="card-title">Cersei Lannister</h6>
+                    <p class="card-text">Health Points <span class="cersieHP"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 -3" id="tyrion">
+            <div class="card characterCardSelect _3 mx-auto tyrionL" value="tyrionL">
+                <img src="./assets/images/tyrion.jpeg" class="card-img-top mx-auto" alt="John Snow"
+                    style="border-radius: 50%;height: 130px;width: 130px">
+                <div class="card-body mx-auto">
+                    <h6 class="card-title">Tyrion Lannister</h6>
+                    <p class="card-text">Health Points <span class="tyrionHP"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 -4" id="king">
+            <div class="card characterCardSelect _4 mx-auto nightKing" value="nightKing">
+                <img src="./assets/images/Night_King.jpg" class="card-img-top mx-auto" alt="John Snow"
+                    style="border-radius: 50%;height: 130px;width: 130px">
+                <div class="card-body mx-auto">
+                    <h6 class="card-title">Night King</h6>
+                    <p class="card-text">Health Points <span class="nightHP"></span></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- fifth row that contains the "Enemies available to attack" text.-->
+    <div class="row padLeft">
+        <div class="col-12">
+            <h4>Enemies Available to Attack</h4>
+        </div>
+    </div>
+
+    <!-- sixth row that contains the characters the enemies available to attack.-->
+    <div class="row padLeft empty" id="enemies">
+        <div class="col-2 move" id="enemies0"></div>
+        <div class="col-2 move" id="enemies1"></div>
+        <div class="col-2 move" id="enemies2"></div>
+        <div class="col-2 move" id="enemies3"></div>
+        <div class="col-2 move" id="enemies4"></div>
+    </div>
+
+    <!-- tenth row that contains the character the player has chosen to attack.-->
+    <div class="row padLeft" style="padding:0px">
+        <div class="col-12" id="defender"></div>
+    </div>
+
+
+    <!-- third row that contains the "Your Character" text.-->
+    <div class="row" style="margin-top: 20px">
+        <div class="col-12 col d-flex align-items-center justify-content-center">
+            <h4 >Battle for the Iron Throne</h4>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-12 col d-flex align-items-center justify-content-center">
+            <button type="button" class="btn btn-danger attackButton mx-5" data-toggle="tooltip" data-placement="top"
+                title="Attack">Dracarys</button>
+            <button type="button" class="btn btn-danger restart mx-5" disabled>Restart</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row padLeft">
+        <div class="col-5 col d-flex align-items-center justify-content-center">
+            <h6 class="attackedBack"></h6>
+        </div>
+        <div class="col-2 col d-flex align-items-center justify-content-center">
+
+        </div>
+        <div class="col-5 col d-flex align-items-center justify-content-center">
+            <h6 class="youAttacked"></h6>
+        </div>
+    </div>
+
+
+    <!-- fourth row that contains the character the player chooses. -->
+    <div class="row padLeft">
+        <div class="col-5 col d-flex align-items-center justify-content-center" id="yourSelectCharacter"></div>
+        <div class="col-2 col d-flex align-items-center justify-content-center">
+            <img src="./assets/images/vs.png" alt="vs" style="width: 50% ">
+        </div>
+        <div class="col-5 col d-flex align-items-center justify-content-center" id="yourSelectEnemy"></div>
+    </div>
+
+    <br>
+    <!-- </div> -->
+
+    <script src="./assets/javascript/game.js"></script>
+</body>
+
+</html>
