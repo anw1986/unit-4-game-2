@@ -9,7 +9,7 @@ You must defeat all the characters to win the game. Here is a link to the [game]
 This is a Game of Thrones RPG. In this game the user needs to select a character, & then an oponent. Once selected click on **Dracarys** (Attack), to start attacking your enemy. The enemy counterttacks with a certain damage. Once an enemy is defeated, select other opponents and repeat. Once all oponnents are defeated **AND** your character has health remaining, your the person sitting on the Iron Throne.
 
 Screen shot of the initial page load
-![game og thrones](./assets/images/Capture)
+![game og thrones](./assets/images/Capture.jpg)
 
 
 ## Game Design Notes & User Tests
