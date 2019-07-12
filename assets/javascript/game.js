@@ -58,7 +58,7 @@ var characters = {
 
 // create a reset function
 function reset() {
-    alert("reset in progress");
+    alert("Reset in Progress");
     $(".johnHP").html(characters.JohnSnow.healthPoints);
     $(".dannyHP").html(characters.DannyTag.healthPoints);
     $(".cersieHP").html(characters.CerseiLan.healthPoints);
