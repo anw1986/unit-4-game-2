@@ -188,19 +188,22 @@ $(document).ready(function () {
         mycharenemy = $(this);
         // console.log(mycharenemy);
 
-        //get the attribute value of the slected enemy character
+        //get the attribute value of the slected enemy character and store in global variable
         enemycharValue = mycharenemy.attr("value")
         // test=$("._4");
         // console.log(test);
         // console.log(mycharenemy);
         // console.log(enemycharValue);
         // alert("enemy card selected");
+        
+        // prepend the card to the selected area
         $("#yourSelectEnemy").prepend(mycharenemy);
         $(mycharenemy).css({
             // "width": "40%",
             "margin-bottom": "10px"
         });
 
+        // for the selected enemy card load attributes in global variables
         if (enemycharValue == characters.JohnSnow.name) {
             enemycharHP = characters.JohnSnow.healthPoints;
             enemycharCA = characters.JohnSnow.counterAttackPower;
@@ -237,6 +240,7 @@ $(document).ready(function () {
 
         $(".attackedBack").fadeIn("slow");
 
+        // check to see if the player has selected an opponent
         if ($("#yourSelectEnemy").children().length == 0) {
             alert("Please select an oponent");
             return;
@@ -246,21 +250,23 @@ $(document).ready(function () {
         baseAttack += mycharAP
         counterattack += enemycharCA;
 
+        // cummulative attack sum
         for (var i = 0; i < counterAP; i++) {
             cummulativeAttack += mycharAP;
             // console.log("index: "+ i,"counter: "+counterAP,cummulativeAttack);
         }
 
+        // print the attack 
         $(".youAttacked").html(mycharfullName + " attacked " + enemycharfullName + " for " + baseAttack + " HP");
         $(".attackedBack").html(enemycharfullName + " counter attacked " + mycharfullName + " for " + enemycharCA + " HP")
         
         $("." + mycharValue).find("span").html(mycharHP - counterattack);
         $("." + enemycharValue).find("span").html(enemycharHP - cummulativeAttack);
         
-        
+        // check condition if selected characted HP is <=0 
         if ((mycharHP - counterattack) <= 0) {
             $(mychar).find("img").css("filter", "grayscale(100%)");
-            $(mycharValue).find("span").html("0");
+            $(mychar).find("span").html("0");
             alert("Sorry! You were not able to make it to the throne. Please try again");
             $(this).prop("disabled", true);
             $(".restart").prop("disabled", false);
@@ -271,7 +277,7 @@ $(document).ready(function () {
             console.log(baseAttack, cummulativeAttack);
 
             // check winning condition for whole game
-            // if count click===4 AND enemyHP<0 win whole game
+            // the first winning condition is a strict condition
             if (countClick === 4 && (enemycharHP - cummulativeAttack) <= 0) {
                 alert("You have won the battle for the Iron Throne")
                 $(".attackButton").prop("disabled", true)
@@ -281,6 +287,7 @@ $(document).ready(function () {
                 return;
             }
             // check winning condition per card
+            // the counter value re-instates to the new enemy card selected 
             if ((enemycharHP - cummulativeAttack) <= 0) {
                 alert("Select New Oponent");
                 $(mycharenemy).find("img").css("filter", "grayscale(100%)")
@@ -296,6 +303,7 @@ $(document).ready(function () {
     });
 
     $(".restart").on("click", function () {
+        // reset function to restore to default
         reset();
     });
 
